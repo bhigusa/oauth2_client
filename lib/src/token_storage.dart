@@ -38,8 +38,7 @@ class TokenStorage {
           found = (tkn['scope'] == null || tkn['scope'].isEmpty);
         } else {
           //...Otherwise look for a token granted to a superset of the requested scopes
-          final tknCleanScopes =
-              clearScopes(<String>[tkn['scope']].cast<String>());
+          final tknCleanScopes = clearScopes(tkn['scope'].cast<String>());
 
           if (tknCleanScopes.isNotEmpty) {
             var s1 = Set.from(tknCleanScopes);
